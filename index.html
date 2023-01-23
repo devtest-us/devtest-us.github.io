@@ -1,28 +1,28 @@
 <html>
-  <head>
-    <style>
-      body {
-        margin-top: 100px;
-      .container {
-        width: 500px;
-        height: 250px;
-        margin: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      } 
-      .content {
-        text-align: center;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class='container'>
-      <div class='content'>
+<head>
+  <style>
+    html,body{
+      height: 100%;
+    }
+    body {
+      display: grid;
+      grid-template-columns:1fr;
+      grid-template-areas:
+        "main"
+      grid-template-rows: auto 1fr auto;
+      height: 100%;
+      margin: 0;
+    }
+    main {
+      background: white;
+      grid-area: main;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+    <main>
         <img width='160' height='240' src='https://user-images.githubusercontent.com/121938533/210537929-6c84abeb-bda6-430f-ab51-b47edd9ba939.png'>
-      </div>
-    </div>
-  </body>
-
+    </main>
+</body>
 </html>
