@@ -3,10 +3,22 @@
 <style>
   body {
     display: grid;
-    grid-template-rows: 1fr;
+    grid-template-rows: auto 1fr auto;
     height: 100%;
     margin: 0;
     width: 100%;
+  }
+  footer {
+    background-color: lightgrey;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+  }
+  header {
+    background-color: lightblue;
+    display: grid;
+    place-items: center;
+    padding: 20px;
   }
   main {
     padding: 20px;
@@ -18,10 +30,16 @@
 </style>
 </head>
 <body>
-    <main class='centered-content'>
+    <header>This is the header</header>
+    <main class='centered-content' contenteditable>
         <div class='centered-content'>
-          <img width='160' height='240' src='https://user-images.githubusercontent.com/121938533/210537929-6c84abeb-bda6-430f-ab51-b47edd9ba939.png'>
+            Hello World!<br />
+            <i>content is editable</i>
         </div>
     </main>
+    <footer>This is the footer</footer>
 </body>
 </html>
+
+
+          <img width='160' height='240' src='https://user-images.githubusercontent.com/121938533/210537929-6c84abeb-bda6-430f-ab51-b47edd9ba939.png'>
