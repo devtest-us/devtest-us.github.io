@@ -1,0 +1,46 @@
+<html>
+<head>
+    <script type="text/javascript">
+        function getText1() {
+            const fs = require('fs')
+            fs.readFile("next-meeting-time.txt", (err, data) => {
+                if (err) throw err;
+                document.getElementById("file_content").innerHTML = data.toString();
+            })
+        }
+        function getText2() {
+            let fileReader = new FileReader();
+            fileReader.readAsText("next-meeting-time.txt");
+            document.getElementById("file_content").innerHTML = fileReader.result;
+        }
+        function getText3() {
+            fetch("https://mesaregalcc.org/next-meeting-time.txt")
+                .then((response) => response.text())
+                .then((data) => document.getElementById("file_content").innerText = data);
+        }
+        function getText4(filePath) {
+            var result = null;
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET", filePath, false);
+            xmlhttp.send();
+            if (xmlhttp.status==200) {
+                result = xmlhttp.responseText;
+            }
+            document.getElementById("file_content").innerText = result.toString();
+        }
+        function getText5(filePath) {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById('file_content').innerHTML = xhr.responseText;
+                }
+            }
+            xhr.open('GET', filePath);
+            xhr.send();
+        }
+    </script>
+</head>
+<body onload='getText5("next-meeting-time.txt")'>
+    <div id='file_content' name='file_content'></div>
+<body>
+</html>
