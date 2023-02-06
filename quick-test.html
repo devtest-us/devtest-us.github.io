@@ -8,9 +8,9 @@
                 document.getElementById("file_content").innerHTML = data.toString();
             })
         }
-        function getText2() {
+        function getText2(filePath) {
             let fileReader = new FileReader();
-            fileReader.readAsText("next-meeting-time.txt");
+            fileReader.readAsText(filePath);
             document.getElementById("file_content").innerHTML = fileReader.result;
         }
         function getText3() {
